@@ -1,0 +1,79 @@
+
+.navbar .nav-item .active {
+    color: #fff; 
+    border: orange;
+    border-width: 3px;
+    border-radius: 50%;
+    border-style: solid;
+    border-top: none;
+    border-right: none;
+  }
+
+  .navbar .nav-item .nav-link {
+    color: #fff; 
+ 
+  }
+
+  .Btn_Weather {
+    border: #0f4c5c;
+    border-style: solid;
+    border-width: 2.5px;
+    border-radius: 25%;
+  }
+  .btn .btn-primary :hover {
+    background-color: orange;
+  }
+  
+  .slogan h2 {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: slide-in 1s ease-in forwards;
+  }
+
+  @keyframes slide-in {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.glow-card {
+  background-color: #0f4c5c;
+  border-color: orange;
+  border-width: 2px;
+  animation: blink 1s infinite alternate;
+}
+
+@keyframes blink {
+  0% {
+    box-shadow: 0 0 10px 5px transparent;
+  }
+  100% {
+    box-shadow: 0 0 10px 5px gold;
+  }
+}
+
+/* mouse hover */
+/* Define the styles for the animated element */
+.animated-element {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #0f4c5c;
+  border-radius: 50%;
+  pointer-events: none; /* Ensure the element doesn't interfere with mouse events */
+  animation: scaleUp 0.3s ease infinite;
+}
+
+@keyframes scaleUp {
+  0% {
+      transform: scale(0);
+      opacity: 1;
+  }
+  100% {
+      transform: scale(1);
+      opacity: 0;
+  }
+}
