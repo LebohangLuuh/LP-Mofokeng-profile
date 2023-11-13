@@ -107,21 +107,23 @@
 }
 
 function getWeatherIcon(description) {
-    // Lookup the icon class based on the description, default to a generic icon if not found
-    return weatherIcons[description.toLowerCase()] || 'fas fa-question';
+    return weatherIcons[description.toLowerCase()] || 'fas fa-wifi';
 }
 const weatherIcons = {
-    'clear sky': 'fas fa-sun', // Example: clear sky is represented by a sun icon
-    'few clouds': 'fas fa-cloud-sun', // Example: few clouds is represented by a partly cloudy icon
-    'scattered clouds': 'fas fa-cloud', // Example: scattered clouds is represented by a cloud icon
-    'moderate rain': 'fas fa-cloud-showers-heavy', // Moderate rain is represented by heavy rain icon
-    'sunny': 'fas fa-sun', // Add a sun icon for sunny
-    'rainy': 'fas fa-cloud-rain', // Add a cloud with raindrops icon for rainy
-    'moderate rain': 'fas fa-cloud-rain', // Add a cloud with raindrops icon for moderate rain
-     'heavy intensity rain':'fas fa-cloud-showers-heavy'// Add more mappings as needed
+    'clear sky': 'fas fa-sun',
+    'few clouds': 'fas fa-cloud-sun',
+    'broken clouds': 'fas fa-cloud-sun',
+    'scattered clouds': 'fas fa-cloud', 
+    'moderate rain': 'fas fa-cloud-showers-heavy',
+    'sunny': 'fas fa-sun', 
+    'rainy': 'fas fa-cloud-rain', 
+    'moderate rain': 'fas fa-cloud-rain', 
+    'heavy intensity rain':'fas fa-cloud-showers-heavy',
+    'light rain' :'fas fa-cloud-rain',
+    'cold' : 'fas fa-thermometer-empty',
+    'snow' : 'fas fa-snowflake',
+    'windy' : 'fas fa-wind',
 };
-
-
           </script>
       </div>
     </div>
@@ -153,9 +155,82 @@ const weatherIcons = {
                   <tr>
                       <td>
                           <h2 class="display-5 text-left" style="color: orange; font-weight: 300;">Web based personal CV</h2>
-                          <h4 class="text-muted">Upgraded my old portfolio to a new polished one</h4>
-                      </td>
+                          <h4 class="text-muted">Upgraded my <a href="https://lebohangluuh.github.io/webCV-Lebohang/ " target="_blank" class="stretched-link"> old portfolio </a> to a new and polished current one</h4>
+                          <footer class="blockquote-footer  text-center" style="color: orange;" >
+                            <small text-right style="color: orange;  font-size: medium;">
+                             Remember, PRACTICE makes progress NOT PERFECT 
+                            </small>
+                          </footer>
+                        </td>
                   </tr>
+                  <tr>
+                    <td>
+                        <h2 class="display-5 text-left" style="color: orange; font-weight: 300;">Logo Design</h2>
+                        <h4 class="text-muted">Designed several <button type="button" class="btn btn-link" style="font-weight:bolder; font-size: large; border-color: orange; border-radius: 15%; border-width: 2px;" data-toggle="modal" data-target=".bd-example-modal-lg">Logos</button>
+                        </a> using Adobe Illustrator</h4>   
+                        
+                        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <!-- images -->
+                              <h2 class="display-3 text-center pb-3" style="color: white; font-weight: 400; background-color: #0f4c5c; border-style: solid; border-width: 1.5px; border-color:orange;">Designed logos</h2>
+
+                              <div class="card mb-3" style="border-color: white; border-style: solid;">
+                                <img class="card-img-top" src="SKEPSEL.jpg" alt="Card image cap" loading="lazy" style="height: 275px;">
+                            </div>
+
+                            <div class="row justify-content-md-center pb-md-4">
+                              <div class="col-sm-6 ">
+                                <div class="card" style="border-color: white; border-style: solid;">
+                                  <img class="card-img-top" src="CLASS.jpg" alt="Card image cap" loading="lazy" style="height: 275px;">
+                              </div>
+                            </div>
+                              <div class="col-sm-6">
+                                <div class="card" style="border-color: white; border-style: solid;">
+                                  <img class="card-img-top" src="DRESS-CODE.jpg" alt="Card image cap" loading="lazy" style="height: 275px;">
+                              </div>
+                              </div>
+                            </div>
+
+                            <div class="row justify-content-md-center pb-md-4">
+                              <div class="col-sm-4 ">
+                                <div class="card" style="border-color: white; border-style: solid;">
+                                  <img class="card-img-top" src="mojaha.jpg" alt="Card image cap" loading="lazy" style="height: 275px;">
+                              </div>
+                            </div>
+                              <div class="col-sm-4">
+                                <div class="card" style="border-color: white; border-style: solid;">
+                                  <img class="card-img-top" src="netblu.jpg" alt="Card image cap" loading="lazy" style="height: 275px;">
+                              </div>
+                            </div>
+                              <div class="col-sm-4">
+                                <div class="card" style="border-color: white; border-style: solid;">
+                                  <img class="card-img-top" src="m-perfom.png" alt="Card image cap" loading="lazy" style="height: 275px;">
+                              </div>
+                              </div>
+                            </div>
+
+                            <div class="row justify-content-md-center pb-md-4">
+                              <div class="col-sm-6 ">
+                                <div class="card" style="border-color: white; border-style: solid;">
+                                  <img class="card-img-top" src="SBU LOGO.jpg" alt="Card image cap" loading="lazy" style="height: 275px;">
+                              </div>
+                            </div>
+                              <div class="col-sm-6">
+                                <div class="card" style="border-color: white; border-style: solid;">
+                                  <img class="card-img-top" src="FB_IMG_15837541853600380_remastered.jpg" alt="Card image cap" loading="lazy" style="height: 275px;">
+                              </div>
+                              </div>
+                            </div>
+                              <!--  -->
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                          </div>
+                        </div>  
+                    </td>
+                </tr>
               </tbody>
           </table>
       </div>

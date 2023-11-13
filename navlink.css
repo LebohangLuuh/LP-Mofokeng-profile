@@ -14,6 +14,42 @@
  
   }
 
+body {
+  overflow-x: hidden;
+}
+
+
+  /*  */
+  .card-content {
+    position: relative;
+    perspective: 1000px;
+  }
+  
+  .card-front,
+  .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: transform 0.5s;
+    backface-visibility: hidden;
+  }
+  
+  .card-back {
+    transform: rotateY(180deg);
+    display: none;
+  }
+  
+  .card-content.is-flipped .card-front {
+    transform: rotateY(180deg);
+    display: none;
+  }
+  
+  .card-content.is-flipped .card-back {
+    transform: rotateY(0deg);
+    display: block;
+  }
+  
+  /*  */
   .Btn_Weather {
     border: #0f4c5c;
     border-style: solid;
@@ -27,7 +63,7 @@
   .slogan h2 {
     overflow: hidden;
     white-space: nowrap;
-    animation: slide-in 1s ease-in forwards;
+    animation: slide-in 1.5s ease-in forwards;
   }
 
   @keyframes slide-in {
@@ -43,7 +79,7 @@
   background-color: #0f4c5c;
   border-color: orange;
   border-width: 2px;
-  animation: blink 1s infinite alternate;
+  animation: blink 1s infinite alternate, storm 1s infinite linear;
 }
 
 @keyframes blink {
@@ -54,6 +90,16 @@
     box-shadow: 0 0 10px 5px gold;
   }
 }
+
+@keyframes storm {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px); /* Adjust the distance of the storm effect */
+  }
+}
+
 
 /* mouse hover */
 /* Define the styles for the animated element */
@@ -76,4 +122,10 @@
       transform: scale(1);
       opacity: 0;
   }
+}
+
+.flip-span {
+  color: lime; 
+  font-size: 18px; 
+  background-color: #0f4c5c;
 }

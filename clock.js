@@ -28,8 +28,16 @@ document.body.addEventListener("mousemove", (event) => {
     element.style.left = event.clientX + "px";
     element.style.top = event.clientY + "px";
 
-    // Remove the element after a short delay (adjust as needed)
+   
     setTimeout(() => {
         element.remove();
-    }, 300);
+    }, 600);
 });
+
+// fliping the image
+function flipCard(cardContent) {
+    cardContent.classList.toggle('is-flipped');
+  }
+
+  
+  
