@@ -68,6 +68,11 @@ body {
     transform: rotateY(0deg);
   }
 
+  .navbar .nav-item .nav-link {
+    text-align: center;
+ 
+  }
+
    .display-3 {
     font-size: 50px;
     }
