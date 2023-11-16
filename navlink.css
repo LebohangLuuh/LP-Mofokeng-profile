@@ -50,24 +50,32 @@ body {
   }
 
   @media (max-width: 767px) {
-  .card-content {
-    perspective: none;
-  }
-
-  .card-front,
-  .card-back {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transform: rotateY(0deg);
-    display: block;
-  }
-
-  .card-content.is-flipped .card-front,
-  .card-content.is-flipped .card-back {
-    transform: rotateY(0deg);
-  }
-
+    .card-content {
+      perspective: inherit;
+    }
+    .card-front,
+    .card-back {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.5s;
+    }
+    .card-front {
+      transform: rotateY(0deg);
+    }
+    .card-back {
+      transform: rotateY(180deg);
+      display: none; /* hide back side by default */
+    }
+    .card-content.is-flipped .card-front {
+      transform: rotateY(180deg);
+    }
+    .card-content.is-flipped .card-back {
+      transform: rotateY(0deg);
+      display: block; /* show back side when flipped */
+    }
+    
   .navbar .nav-item .nav-link {
     text-align: center;
  
