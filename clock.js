@@ -43,4 +43,9 @@ document.querySelector('.card-content').addEventListener('click', function() {
     this.classList.toggle('is-flipped');
   });
   
-  
+//   
+document.querySelectorAll('.clickable-row').forEach(row => {
+    row.addEventListener('click', () => {
+      alert('Please click for more information!');
+    });
+  });
