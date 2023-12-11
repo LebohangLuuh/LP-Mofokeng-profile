@@ -9,7 +9,7 @@ function updateClock() {
     const clock = document.getElementById('clock');
     const dateDisplay = document.getElementById('date');
 
-    clock.innerText = `${hours}:${minutes}:${seconds}`;
+    clock.innerText = `${hours}:${minutes}`;
     dateDisplay.innerText = date;
 }
 
@@ -49,3 +49,50 @@ document.querySelectorAll('.clickable-row').forEach(row => {
       alert('Please click for more information!');
     });
   });
+  
+// 3d effect
+document.addEventListener('DOMContentLoaded', () => {
+  const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+  const pageContent = document.querySelector('.page-content');
+
+  let currentPageIndex = -1;
+
+  // Find the index of the current page in the navbar links
+  const currentPagePath = window.location.pathname;
+
+  navLinks.forEach((link, index) => {
+    const linkPath = link.getAttribute('href');
+    
+    if (linkPath === currentPagePath) {
+      currentPageIndex = index;
+    }
+
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      const href = link.getAttribute('href');
+      const nextPageIndex = Array.from(navLinks).findIndex(item => item.getAttribute('href') === href);
+
+      // Calculate direction for the flip effect
+      const direction = nextPageIndex > currentPageIndex ? 'forward' : 'backward';
+      
+      // Apply the class for the flip effect
+      pageContent.classList.add(`page-flip-${direction}`);
+      
+      // Update the current page index
+      currentPageIndex = nextPageIndex;
+
+      // Set a timeout to navigate to the new page after the transition
+      setTimeout(() => {
+        window.location.href = href;
+      }, 500); // Adjust the transition time as needed
+    });
+  });
+});
+
+
+
+
+  
+  
+ 
+    
