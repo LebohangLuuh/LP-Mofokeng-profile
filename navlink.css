@@ -88,6 +88,10 @@ body {
     .display-2{
     font-size: 50px;
   }
+
+  .numbers .rect h1 {
+    font-size: 1rem;
+  }
 }
   
   /*  */
@@ -298,4 +302,31 @@ background-repeat: 0 0; /* Adjust the border color */
   animation: flip-backward 0.6s ease both;
 }
 
+/*percentage counting feature */
 
+header h1 {
+	font-size: 60px;
+}
+
+.counters .container {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-gap: 40px;
+	text-align: center;
+}
+
+.counters .counter {
+	font-size: 45px;
+	margin: 10px 0;
+}
+
+@media (max-width: 700px) {
+	.counters .container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.counters .container > div:nth-of-type(1),
+	.counters .container > div:nth-of-type(2) {
+		padding-bottom: 20px;
+	}
+}

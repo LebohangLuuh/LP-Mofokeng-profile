@@ -17,7 +17,6 @@ setInterval(updateClock, 1000);
 
 updateClock();
 
-
 // mouse hover
 
 document.body.addEventListener("mousemove", (event) => {
@@ -50,7 +49,7 @@ document.querySelectorAll('.clickable-row').forEach(row => {
     });
   });
   
-// 3d effect
+// 3d effect for paging
 document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
   const pageContent = document.querySelector('.page-content');
@@ -71,20 +70,16 @@ document.addEventListener('DOMContentLoaded', () => {
       event.preventDefault();
       const href = link.getAttribute('href');
       const nextPageIndex = Array.from(navLinks).findIndex(item => item.getAttribute('href') === href);
-
-      // Calculate direction for the flip effect
+ 
       const direction = nextPageIndex > currentPageIndex ? 'forward' : 'backward';
-      
-      // Apply the class for the flip effect
+   
       pageContent.classList.add(`page-flip-${direction}`);
-      
-      // Update the current page index
-      currentPageIndex = nextPageIndex;
 
-      // Set a timeout to navigate to the new page after the transition
+      currentPageIndex = nextPageIndex;
+    
       setTimeout(() => {
         window.location.href = href;
-      }, 500); // Adjust the transition time as needed
+      }, 500); 
     });
   });
 });

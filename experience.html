@@ -7,6 +7,8 @@
 
   <link rel="icon" href="profile.jpg" type="image/x-icon">
 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -59,9 +61,62 @@
   <!-- content -->
 
   <h1 class="display-2 text-center" style="color: #0f4c5c; font-weight: 300;" >EXPERIENCE</h1>
-  <div class="container" style="background-color: #0f4c5c; width:fit-content">
-  <h1 class="display-6 text-center pt-2 pb-2" style="color: lime; font-size: 17px; font-weight: 300;" >The story of my professional growth and architect of expertise</h1>
+  <div class="container-fluid" style="background-color: #0f4c5c; width:fit-content">
+  <h1 class="display-5 text-center pt-2 pb-0" style="color: whitesmoke; font-weight: 300;" >The story of my professional growth and architect of expertise</h1>
+  
+  <section class="counters">
+    <div class="container w-100">
+      <div>
+        <div class="counter" style=" color: orange;" data-target="90">0</div>
+        <p class="display-4" style="font-size: large; color: lime;">Resilience and Adaptation</p>
+      </div>
+      <div>
+        <div class="counter" style=" color: orange;" data-target="97">0</div>
+        <p class="display-4" style="font-size: large; color: lime;">Ethical Behavior</p>
+      </div>
+      <div>
+        <div class="counter" style=" color: orange;" data-target="95">0</div>
+        <p class="display-4" style="font-size: large; color: lime;">Professionalism</p>
+      </div>
+      <div>
+        <div class="counter" style=" color: orange;" data-target="85">0</div>
+        <p class="display-4" style="font-size: large; color: lime;">Reliability and Accountability</p>
+      </div>
+      <div>
+        <div class="counter" style=" color: orange;" data-target="80">0</div>
+        <p class="display-4" style="font-size: large; color: lime;">Initiative and Proactiveness</p>
+      </div>
+    </div>
+  </section>
+  </div>
 </div>
+<!--  -->
+
+<script>
+  const counters = document.querySelectorAll('.counter');
+  const speed = 15;
+
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target');
+      let count = 1; // Start counting from 1
+
+      const increaseCounter = () => {
+        if (count <= target) {
+          counter.innerText = count + '%'; // Display the count with a percentage sign
+          count++;
+          setTimeout(increaseCounter, speed);
+        }
+      };
+
+      increaseCounter();
+    };
+
+    updateCount();
+  });
+</script>
+
+
 
   <!-- Table -->
 <div class="row">
@@ -175,11 +230,12 @@
     </div>
   </div>
   
+
   <script src="clock.js"></script>
-    
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    </div>
-  </body>
+  
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </div>
+</body>
 </html>
