@@ -74,7 +74,7 @@
           <div id="weather"></div>
         
           <script>
-              function getLocation() {
+    function getLocation() {
                   if ("geolocation" in navigator) {
                       navigator.geolocation.getCurrentPosition(function(position) {
                           const latitude = position.coords.latitude;
@@ -110,6 +110,7 @@
         });
 }
 
+
 function getWeatherIcon(description) {
     return weatherIcons[description.toLowerCase()] || 'fas fa-wifi';
 }
@@ -128,6 +129,8 @@ const weatherIcons = {
     'snow' : 'fas fa-snowflake',
     'windy' : 'fas fa-wind',
 };
+
+
           </script>
       </div>
     </div>
