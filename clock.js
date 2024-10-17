@@ -33,11 +33,6 @@ document.body.addEventListener("mousemove", (event) => {
     }, 600);
 });
 
-// fliping the image
-// function flipCard(cardContent) {
-//     cardContent.classList.toggle('is-flipped');
-//   }
-
 document.querySelector('.card-content').addEventListener('click', function() {
     this.classList.toggle('is-flipped');
   });
