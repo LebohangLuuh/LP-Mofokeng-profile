@@ -61,6 +61,7 @@ body {
       transform-style: preserve-3d;
       transition: transform 0.5s;
     }
+
     .card-front {
       transform: rotateY(0deg);
     }
@@ -322,3 +323,9 @@ header h1 {
 		padding-bottom: 20px;
 	}
 }
+@media only screen and (max-width: 768px) {
+  #clockLogo {
+    display: none;
+  }
+}
+
