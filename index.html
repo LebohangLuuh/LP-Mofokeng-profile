@@ -1,305 +1,405 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Profile</title>
 
-  <link rel="icon" href="profile.jpg" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="icon" href="profile.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 
   <style>
     .embed-responsive-item.custom-width {
-        width: 100%; 
+      width: 100%;
     }
-</style>
-<link rel="stylesheet" href="navlink.css">
-
+  </style>
+  <link rel="stylesheet" href="navlink.css" />
 </head>
-<body>
 
-  <nav class="navbar navbar-expand-md navbar-light sticky-top" style="background-color: #0f4c5c;"> 
-    <button class="navbar-toggler" style="border-color: transparent;" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<body>
+  <nav class="navbar navbar-expand-md navbar-light sticky-top" style="background-color: #0f4c5c">
+    <button class="navbar-toggler" style="border-color: transparent" type="button" data-toggle="collapse"
+      data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon">
-        <i class="fas fa-bars" style="color: orange; font-size: 29px;"></i>
+        <i class="fas fa-bars" style="color: orange; font-size: 29px"></i>
       </span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav m-sm-auto" >
-        <li class="nav-item" style="margin-top: 25px; margin-right: 10px;"> 
-          <a class="nav-link active" style="color: white;" href="index.html">Profile </a>
+      <ul class="navbar-nav m-sm-auto">
+        <li class="nav-item" style="margin-top: 25px; margin-right: 10px">
+          <a class="nav-link active" style="color: white" href="index.html">Profile
+          </a>
         </li>
-        <li class="nav-item" style="margin-top: 25px; margin-right: 10px;"> 
+        <li class="nav-item" style="margin-top: 25px; margin-right: 10px">
           <a class="nav-link" href="skills_Page.html">Skills</a>
         </li>
 
-        <li class="nav-item" style="margin-left: 70px; margin-right: 50px;">
+        <li class="nav-item" style="margin-left: 70px; margin-right: 50px">
           <div class="navbar-brand" id="clockLogo">
-        <a class="navbar-brand" style="color: white; font-size: xx-large; display: flex; align-items: center;" href="index.html">
-          <!-- Clock -->
-          <div class="d-inline col-12" style="border: wheat; border-style: double; border-bottom: none; border-top: none; border-radius:15px;">
-            <div class="display-6" style="color: orange; font-size: larger;" id="clock"></div>
-          <div class="lead" style="color: lime; font-size: small; text-align: left;" id="date"></div>
-        </div>
-      </a>
-    </div>
-      </li>
-
-      <li class="nav-item" style="margin-top: 25px; margin-right: 10px;"> 
-        <a class="nav-link "  href="experience.html">Experience</a>
+            <a class="navbar-brand" style="
+                  color: white;
+                  font-size: xx-large;
+                  display: flex;
+                  align-items: center;
+                " href="index.html">
+              <!-- Clock -->
+              <div class="d-inline col-12" style="
+                    border: wheat;
+                    border-style: double;
+                    border-bottom: none;
+                    border-top: none;
+                    border-radius: 15px;
+                  ">
+                <div class="display-6" style="color: orange; font-size: larger" id="clock"></div>
+                <div class="lead" style="color: lime; font-size: small; text-align: left" id="date"></div>
+              </div>
+            </a>
+          </div>
         </li>
-        <li class="nav-item" style="margin-top: 25px; margin-right: 10px;"> 
-          <a class="nav-link " href="project_Page.html">Projects</a>
+
+        <li class="nav-item" style="margin-top: 25px; margin-right: 10px">
+          <a class="nav-link" href="experience.html">Experience</a>
+        </li>
+        <li class="nav-item" style="margin-top: 25px; margin-right: 10px">
+          <a class="nav-link" href="project_Page.html">Projects</a>
         </li>
       </ul>
     </div>
   </nav>
 
   <div class="page-content">
+    <div class="jumbotron pb-0 mb-0" style="background-color: white">
+      <div class="row">
+        <div class="col-sm-6 col-md-4">
+          <div class="card pro-pic">
+            <span class="d-inline-block flip-span" tabindex="0" data-toggle="tooltip" title="Click to flip">
+              <div class="card-content" style="height: 57vh" onclick="flipCard(this)">
+                <div class="card-front">
+                  <img class="card-img-top" src="img/profile.jpg" height="390px" loading="lazy" alt="Profile image" />
+                  <div style="background-color: #0f4c5c">
+                    <h1 class="display-5 text-center" style="
+                          color: white;
+                          font-weight: 300;
+                          background-color: #0f4c5c;
+                        ">
+                      Full Stack Developer
+                    </h1>
+                    <div class="slogan">
+                      <h2 class="display-4 text-center pb-2" style="
+                            color: orange;
+                            font-size: small;
+                            font-weight: 500;
+                            background-color: #0f4c5c;
+                          ">
+                        PRACTICE makes progress NOT PERFECT 💻
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <img class="card-img-top" src="img/Qualification_1.jpg" height="445px" loading="lazy"
+                    alt="Programming" />
+                  <!-- <h2 class="display-5 text-center pt-2 pb-3" style="background-color: #0f4c5c; color: white; font-weight: 300; font-size: xx-large;">Programming is Art</h2> -->
+                </div>
+              </div>
+            </span>
+          </div>
+        </div>
 
-<div class="jumbotron pb-0 mb-0"style="background-color: white;">
+        <div class="col-sm-8">
+          <div class="card" style="border-color: white">
+            <div class="jumbotron mt-0 pt-0" style="background-color: white">
+              <h1 class="display-3 text-center" style="color: #0f4c5c; font-weight: 300">
+                Lebohang Mofokeng
+              </h1>
 
-<div class="row">
-<div class="col-sm-6 col-md-4">
+              <div style="
+                    background-color: #0f4c5c;
+                    height: 85px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  ">
+                <h3 class="display-4 text-left pl-3" style="color: lime; font-size: 25px">
+                  Get in touch
+                </h3>
 
-<div class="card pro-pic">
-  <span class="d-inline-block flip-span" tabindex="0" data-toggle="tooltip" title="Click to flip">
-    <div class="card-content" style="height: 57vh;" onclick="flipCard(this)">
-      <div class="card-front" >
-        <img class="card-img-top" src="img/profile.jpg" height="390px" loading="lazy" alt="Profile image">
-        <div style="background-color: #0f4c5c;">
-          <h1 class="display-5 text-center" style="color: white; font-weight: 300; background-color: #0f4c5c;">Full Stack Developer</h1>
-          <div class="slogan">
-            <h2 class="display-4 text-center pb-2" style="color: orange; font-size: small; font-weight: 500; background-color: #0f4c5c;">PRACTICE makes progress NOT PERFECT 💻</h2>
+                <div class="col-sm-10 text-right">
+                  <a href="https://www.linkedin.com/in/lebohang-mofokeng-175b71183" target="_blank">
+                    <i class="fab fa-linkedin" style="font-size: xx-large; width: 12%; color: blue"></i>
+                  </a>
+
+                  <a href="https://github.com/LebohangLuuh" target="_blank">
+                    <i class="fab fa-github" style="font-size: xx-large; width: 12%; color: black"></i>
+                  </a>
+
+                  <a href="mailto:lp.mofokeng96@gmail.com" target="_blank">
+                    <i class="fas fa-envelope" style="font-size: xx-large; width: 12%; color: red"></i>
+                  </a>
+
+                  <a href="tel:0710416807" target="_blank">
+                    <i class="fas fa-phone-alt" style="font-size: xx-large; width: 12%; color: green"></i>
+                  </a>
+                </div>
+              </div>
+
+              <hr class="my-4" style="border-color: orange; border-width: 2px" />
+
+              <p class="card-text" style="font-size: 22px">
+                I am a dedicated Information Technology graduate from Tshwane
+                University of Technology, equipped with a solid foundation in
+                technology and a high proficiency in various computer
+                programs. My ambition, passion, and unwavering commitment to
+                ethical practices are defining traits. I am actively seeking
+                an entry-level position to apply my knowledge, enhance my
+                skills, and contribute to an organization's growth and
+                success. I am confident that my motivation, skills, and
+                ethical values will be an asset as a developer.
+              </p>
+
+              <!-- Button to trigger the collapse -->
+              <button class="btn btn-primary" style="
+                    margin-left: 20px;
+                    border: #0f4c5c;
+                    border-style: solid;
+                    border-width: 3.5px;
+                    border-radius: 25px;
+                    background-color: #0f4c5c;
+                    color: white;
+                    border: orange;
+                    border-style: solid;
+                    border-width: 2px;
+                  " data-toggle="collapse" data-target="#collapseContent" aria-expanded="false"
+                aria-controls="collapseContent">
+                Learn More
+              </button>
+            </div>
+            <!-- </p> -->
           </div>
         </div>
       </div>
-      <div class="card-back" >
-        <img class="card-img-top" src="img/Qualification_1.jpg" height="445px" loading="lazy" alt="Programming">
-        <!-- <h2 class="display-5 text-center pt-2 pb-3" style="background-color: #0f4c5c; color: white; font-weight: 300; font-size: xx-large;">Programming is Art</h2> -->
-      </div>
     </div>
-  </span>
-</div>
-</div>
 
-    <div class="col-sm-8">
-      <div class="card" style="border-color: white;">
-        <div class="jumbotron mt-0 pt-0" style="background-color: white;">
-          <h1 class="display-3 text-center" style="color: #0f4c5c; font-weight: 300;">Lebohang Mofokeng</h1>
+    <!-- Collapsible content -->
+    <div class="collapse" id="collapseContent">
+      <h1 class="display-3 text-center mt-0 pt-0" style="color: #0f4c5c; font-weight: 400">
+        EDUCATION
+      </h1>
 
-          <div style="background-color: #0f4c5c; height: 85px; display: flex; align-items: center; justify-content: center;">
-           
-            <h3 class="display-4 text-left pl-3" style="color: lime; font-size: 25px;">Get in touch</h3>
+      <!--  -->
+      <div class="row justify-content-sm-center">
+        <div class="col-sm-5">
+          <div class="card">
+            <h2 class="display-5 text-left" style="color: orange">
+              Tiisetsang High School
+            </h2>
+            <h5>2014 : Matric</h5>
+            <h5 style="
+                  background-color: #0f4c5c;
+                  color: white;
+                  font-weight: 300;
+                  text-align: center;
+                ">
+              Major Subjects
+            </h5>
 
-            <div class="col-sm-10 text-right ">
-                <a href="https://www.linkedin.com/in/lebohang-mofokeng-175b71183" target="_blank">
-                    <i class="fab fa-linkedin" style="font-size: xx-large;width: 12%; color: blue;"></i>
-                </a>
-                  
-                <a href="https://github.com/LebohangLuuh" target="_blank">
-                    <i class="fab fa-github" style="font-size: xx-large;width: 12%; color: black;"></i>
-                </a>
-                  
-                <a href="mailto:lp.mofokeng96@gmail.com" target="_blank">
-                    <i class="fas fa-envelope" style="font-size: xx-large;width: 12%; color: red;"></i>
-                </a>
-          
-                <a href="tel:0710416807" target="_blank">
-                    <i class="fas fa-phone-alt" style="font-size: xx-large;width: 12%; color: green;"></i>
-                </a>  
+            <!--  -->
+            <div class="row">
+              <div class="card-deck" style="padding-inline: 3%">
+                <div class="col-sm-6">
+                  <div class="card" style="border-color: transparent">
+                    <img src="img/maths.jpg" class="card-img-top" loading="lazy" alt="Mathematics" />
+                    <div class="card-body">
+                      <h5 class="display-6 text-center card-title" style="font-size: larger; font-weight: 350">
+                        Mathematics
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="card" style="border-color: transparent">
+                    <img src="img/fizix.jpg " class="card-img-top" loading="lazy" alt="Physical Sciences" />
+                    <div class="card-body">
+                      <h5 class="display-6 text-center card-title" style="font-size: larger; font-weight: 350">
+                        Physical Sciences
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row" style="margin: 0.5%">
+                <div class="card-deck" style="padding-inline: 3%">
+                  <div class="col-sm-6">
+                    <div class="card" style="border-color: transparent">
+                      <img src="img/dna.jpg" class="card-img-top" loading="lazy" alt="Life Sciences" />
+                      <div class="card-body">
+                        <h5 class="display-6 text-center card-title" style="font-size: larger; font-weight: 350">
+                          Life Sciences
+                        </h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-        
-          <hr class="my-4" style="border-color: orange; border-width: 2px;">
 
-          <p class="card-text" style="font-size: 22px;">I am a dedicated Information Technology graduate from Tshwane University of Technology, equipped with a solid foundation in technology and a high proficiency in various computer programs. My ambition, passion, and unwavering commitment to ethical practices are defining traits. I am actively seeking an entry-level position to apply my knowledge, enhance my skills, and contribute to an organization's growth and success. I am confident that my motivation, skills, and ethical values will be an asset as a developer.</p>
-        
-          <!-- Button to trigger the collapse -->
-<button class="btn btn-primary" style="margin-left: 20px;  border: #0f4c5c;
-border-style: solid;
-border-width: 3.5px;
-border-radius: 25px; background-color: #0f4c5c; color: white; border: orange; border-style: solid; border-width: 2px;" data-toggle="collapse" data-target="#collapseContent" aria-expanded="false" aria-controls="collapseContent">
-  Learn More
-</button>
+        <div class="col-sm-5">
+          <div class="card">
+            <h2 class="display-5 text-center" style="color: orange">
+              Tshwane University of Technology
+            </h2>
+            <h5>2021 : National Diploma</h5>
+            <h5 style="
+                  background-color: #0f4c5c;
+                  color: white;
+                  font-weight: 300;
+                  text-align: center;
+                ">
+              Course : IT - Software Development
+            </h5>
+            <!--  -->
+            <div class="row" style="margin: 1%">
+              <div class="card-deck" style="padding-inline: 3%">
+                <div class="col-sm-6">
+                  <div class="card" style="border-color: transparent">
+                    <img src="img/coding.jpg" class="card-img-top" loading="lazy" alt="Technical Programming" />
+                    <div class="card-body">
+                      <h5 class="display-5 text-center card-title" style="font-size: larger; font-weight: 350">
+                        Technical Programming
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="card" style="border-color: transparent">
+                    <img src="img/plan.jpg" class="card-img-top" loading="lazy" alt="Informatiom Systems" />
+                    <div class="card-body">
+                      <h5 class="display-6 text-center card-title" style="font-size: larger; font-weight: 350">
+                        Informatiom Systems
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-</div>
-<!-- </p> -->
+            <div class="row" style="margin: 1%">
+              <div class="card-deck" style="padding-inline: 3%">
+                <div class="col-sm-6">
+                  <div class="card" style="border-color: transparent">
+                    <img src="img/networks.jpg" class="card-img-top" loading="lazy" alt="System Software" />
+                    <div class="card-body">
+                      <h5 class="display-6 text-center card-title" style="font-size: larger; font-weight: 350">
+                        System Software
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="card" style="border-color: transparent">
+                    <img src="img/pc.jpg" class="card-img-top" loading="lazy" alt="computing systems" />
+                    <div class="card-body">
+                      <h5 class="display-5 text-center card-title" style="font-size: larger; font-weight: 350">
+                        Computing Systems
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+          </div>
+        </div>
+      </div>
 
+      <br /><br />
+      <hr style="border-color: white" />
+
+      <!--  -->
+      <h1 class="display-3 text-center" style="color: #fff; font-weight: 400; background-color: #0f4c5c">
+        HOBBIES
+      </h1>
+      <div class="row justify-content-md-center">
+        <div class="col-sm-3">
+          <div class="card" style="border-color: transparent">
+            <img class="card-img-top" src="img/playing pool.jpg" alt="playing pool" loading="lazy"
+              style="height: 375px" />
+            <h2 class="display-5 text-center" style="color: #0f4c5c">
+              Snooker
+            </h2>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card" style="border-color: transparent">
+            <img class="card-img-top" src="img/bgdj.jpg" alt="music as a hobby" loading="lazy" style="height: 375px" />
+            <h2 class="display-5 text-center" style="color: #0f4c5c">
+              Music
+            </h2>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card" style="border-color: transparent">
+            <img class="card-img-top" src="img/draw.jpg" alt="Drawing" loading="lazy" style="height: 375px" />
+            <h2 class="display-5 text-center" style="color: #0f4c5c">
+              Drawing
+            </h2>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
+    <br /><br />
 
+    <!-- FOOTER -->
 
-<!-- Collapsible content -->
-<div class="collapse" id="collapseContent">
-<h1 class="display-3 text-center mt-0 pt-0" style="color: #0f4c5c; font-weight: 400;" >EDUCATION</h1>
-
-<!--  -->
-<div class="row justify-content-sm-center">
-  <div class="col-sm-5">
-    <div class="card">
-      <h2 class="display-5 text-left" style="color: orange;">Tiisetsang High School</h2>
-      <h5>2014 : Matric</h5> 
-      <h5 style="background-color: #0f4c5c; color: white; font-weight: 300; text-align: center;">Major Subjects  </h5> 
-
-<!--  -->
-<div class="row">
-<div class="card-deck" style="padding-inline: 3%;">
-  <div class="col-sm-6">
-  <div class="card "  style="border-color: transparent;" >
-    <img src="img/maths.jpg" class="card-img-top" loading="lazy" alt="Mathematics">
-    <div class="card-body">
-      <h5 class="display-6 text-center card-title" style="font-size: larger; font-weight: 350;">Mathematics</h5>
-    </div>
-  </div>
-</div>
-
-  <div class="col-sm-6">
-  <div class="card"  style="border-color: transparent;">
-    <img src="img/fizix.jpg " class="card-img-top" loading="lazy" alt="Physical Sciences">
-    <div class="card-body">
-      <h5 class="display-6 text-center card-title" style="font-size: larger; font-weight: 350;">Physical Sciences</h5>
-    </div>
-  </div>
-</div>
-</div>
-
-<div class="row" style="margin: 0.5%;" >
-  <div class="card-deck" style="padding-inline: 3%; ">
-    <div class="col-sm-6">
-    <div class="card"  style="border-color: transparent;">
-      <img src="img/dna.jpg" class="card-img-top" loading="lazy" alt="Life Sciences">
-      <div class="card-body">
-        <h5 class="display-6 text-center card-title" style="font-size: larger; font-weight: 350;">Life Sciences</h5>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-  <div class="col-sm-5">
-    <div class="card">
-      <h2 class="display-5 text-center" style="color: orange;">Tshwane University of Technology</h2>
-      <h5>2021 : National Diploma </h5> 
-      <h5 style="background-color: #0f4c5c; color: white; font-weight: 300; text-align: center;">Course : IT - Software Development </h5> 
-  <!--  -->
-  <div class="row" style="margin: 1%;">
-  <div class="card-deck"style="padding-inline: 3%">
-    <div class="col-sm-6">
-    <div class="card"  style="border-color: transparent;">
-      <img src="img/coding.jpg" class="card-img-top" loading="lazy" alt="Technical Programming">
-      <div class="card-body">
-        <h5 class="display-5 text-center card-title" style="font-size: larger; font-weight: 350;">Technical Programming</h5>
-      </div>
-    </div>
-    </div>
-    <div class="col-sm-6">
-    <div class="card"  style="border-color: transparent;">
-      <img src="img/plan.jpg" class="card-img-top" loading="lazy" alt="Informatiom Systems">
-      <div class="card-body">
-        <h5 class="display-6 text-center card-title" style="font-size: larger; font-weight: 350;">Informatiom Systems</h5>
-      </div>
-    </div>
-   </div>
-  </div>
-</div>
-
-<div class="row" style="margin: 1%;">
-  <div class="card-deck" style="padding-inline: 3%; ">
-    <div class="col-sm-6">
-    <div class="card"  style="border-color: transparent;">
-      <img src="img/networks.jpg" class="card-img-top" loading="lazy" alt="System Software">
-      <div class="card-body">
-        <h5 class="display-6 text-center card-title" style="font-size: larger; font-weight: 350;">System Software</h5>
-      </div>
-    </div>
-    </div>
-    <div class="col-sm-6">
-    <div class="card"  style="border-color: transparent;">
-      <img src="img/pc.jpg" class="card-img-top" loading="lazy" alt="computing systems">
-      <div class="card-body">
-        <h5 class="display-5 text-center card-title" style="font-size: larger; font-weight: 350;">Computing Systems</h5>
-      </div>
-    </div>
-   </div>
-  </div>
-</div>
-  <!--  -->
-</div>
-</div>
-</div>
-
-<br><br><hr style="border-color: white;">
-
-<!--  -->
-<h1 class="display-3 text-center" style="color: #fff; font-weight: 400; background-color: #0f4c5c;" >HOBBIES</h1>
-<div class="row justify-content-md-center">
-  <div class="col-sm-3 ">
-    <div class="card"  style="border-color: transparent;">
-      <img class="card-img-top" src="img/playing pool.jpg" alt="playing pool" loading="lazy" style="height: 375px;">
-      <h2 class="display-5 text-center" style="color: #0f4c5c;">Snooker</h2>
-  </div>
-</div>
-  <div class="col-sm-3">
-    <div class="card"  style="border-color: transparent;">
-      <img class="card-img-top" src="img/bgdj.jpg" alt="music as a hobby" loading="lazy" style="height: 375px;">
-      <h2 class="display-5 text-center" style="color: #0f4c5c;">Music</h2>
-  </div>
-</div>
-  <div class="col-sm-3">
-    <div class="card"  style="border-color: transparent;">
-      <img class="card-img-top" src="img/draw.jpg" alt="Drawing" loading="lazy" style="height: 375px;">
-      <h2 class="display-5 text-center" style="color: #0f4c5c;">Drawing</h2>
-  </div>
-  </div>
-</div>
-</div>
-
-<br><br>
-
-<!-- FOOTER -->
-
-<div class="card-fluid text-center pt-0" style="background-color: #0f4c5c;">
-  <div class="row">
-  <div class="card-body d-flex flex-column align-items-center">
-      
+    <div class="card-fluid text-center pt-0" style="background-color: #0f4c5c">
+      <div class="row">
+        <div class="card-body d-flex flex-column align-items-center">
           <a href="https://www.linkedin.com/in/lebohang-mofokeng-175b71183" target="_blank">
-              <i class="fab fa-linkedin" style=" color: blue;"></i> Lebohang Mofokeng
+            <i class="fab fa-linkedin" style="color: blue"></i> Lebohang
+            Mofokeng
           </a>
-     
+
           <a href="https://github.com/LebohangLuuh" target="_blank">
-              <i class="fab fa-github" style=" color: black;"></i> LebohangLuuh
+            <i class="fab fa-github" style="color: black"></i> LebohangLuuh
           </a>
-      
+
           <a href="mailto:lp.mofokeng96@gmail.com">
-              <i class="fas fa-envelope" style=" color: red;"></i> lp.mofokeng96@gmail.com
+            <i class="fas fa-envelope" style="color: red"></i>
+            lp.mofokeng96@gmail.com
           </a>
-    
+
           <a href="tel:0710416807" class="phone-link">
-            <i class="fas fa-phone-alt icon-phone" style="color: green;"></i> 071 041 6807
-        </a>
+            <i class="fas fa-phone-alt icon-phone" style="color: green"></i>
+            071 041 6807
+          </a>
+        </div>
       </div>
-  </div>
-  <div class="card-footer text-muted">
-      Copyright © | 2023 | Lebohang Mofokeng
-  </div>
-</div>
+      <div class="card-footer text-muted">
+        Copyright © | 2023 | Lebohang Mofokeng
+      </div>
+    </div>
 
+    <script src="clock.js" defer></script>
 
-
-<script src="clock.js" defer></script>
-  
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
   </div>
 </body>
+
 </html>
