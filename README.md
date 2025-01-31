@@ -1,2 +1,2 @@
 # LP-Mofokeng-profile
-my updated web based cv - (not complete)
+my updated web based cv using bootstrap
