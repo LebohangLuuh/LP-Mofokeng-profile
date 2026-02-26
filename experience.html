@@ -22,49 +22,157 @@
 
 </head>
 <body>
-  <nav class="navbar navbar-expand-md navbar-light sticky-top " style="background-color: #0f4c5c;"> 
+<nav class="navbar navbar-expand-md navbar-light sticky-top" style="background-color: #0f4c5c;">
 
     <div class="navbar-brand" id="clockLog">
-      <a class="navbar-brand" style="color: white; font-size: xx-large; display: flex; align-items: center;" href="index.html">
+      <a class="navbar-brand" style="color: white; font-size: xx-large; display: flex; align-items: center;"
+        href="index.html">
         <!-- Clock -->
-        <div class="d-inline col-12" style="border: white; border-style: double; border-bottom: none; border-top: none; border-radius:15px;">
+        <div class="d-inline col-12"
+          style="border: white; border-style: double; border-bottom: none; border-top: none; border-radius:15px;">
           <div class="display-6" style="color: orange; font-size: larger;" id="clock"></div>
           <div class="lead" style="color: lime; font-size: small; text-align: left;" id="date"></div>
         </div>
       </a>
     </div>
-    
 
-    <button class="navbar-toggler" style="border-color: transparent;" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler ml-auto" style="border-color: transparent; margin-left: auto;" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon">
         <i class="fas fa-bars" style="color: orange; font-size: 29px;"></i>
       </span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav m-sm-auto" >
-        <li class="nav-item" style="margin-top: 25px; margin-right: 25px;"> 
+
+     <div class="container">
+
+      <div class="col-sm-4 d-none d-md-block" style="padding: 0;">
+        <div class="collapse multi-collapse" id="multiCollapseExample2">
+          <div class="card" style="background-color: #0f4c5c; border: none; box-shadow: none;">
+           
+            <div id="weather" class="d-none d-md-block"></div>
+
+            <script>
+              function getLocation() {
+                if ("geolocation" in navigator) {
+                  navigator.geolocation.getCurrentPosition(function (position) {
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+                    getWeather(latitude, longitude);
+                  }, function(err){
+                    updateNavWeatherError();
+                  });
+                } else {
+                  updateNavWeatherError();
+                }
+              }
+
+              function getWeather(latitude, longitude) {
+                const apiKey = "23a564e16eb2d19c8a6294d56d61e19b";
+                const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+
+                fetch(apiUrl)
+                  .then(response => response.json())
+                  .then(data => {
+                    // Update panel
+                    const weatherDiv = document.getElementById("weather");
+                    weatherDiv.innerHTML = `
+                <h2 class="display-5 text-center" style="font-weight: 200; color: orange">Temp : ${data.main.temp}°C</h2>
+                <h2 class="display-6 text-center" style="font-weight: 100; color: white; font-size: large">
+                    Conditions:
+                    <i class=" ${getWeatherIcon(data.weather[0].description)} "></i> 
+                </h2>
+                <h2 class="display-6 text-center" style="font-weight: 200; color: lime; font-size: medium">
+              Description : ${data.weather[0].description} </h2>
+            `;
+
+                    const navEl = document.getElementById('nav-weather');
+                    if (navEl) {
+                      const icon = getWeatherIcon(data.weather[0].description);
+                      navEl.innerHTML = `<i class="${icon}" style="color: orange;"></i> ${Math.round(data.main.temp)}°C, ${data.weather[0].description}`;
+                    }
+                  })
+                  .catch(error => {
+                    console.error("Error fetching weather data:", error);
+                    updateNavWeatherError();
+                  });
+              }
+
+              function updateNavWeatherError(){
+                const navEl = document.getElementById('nav-weather');
+                if (navEl) {
+                  navEl.innerHTML = '<i class="fas fa-exclamation-triangle" style="color: orange;"></i> Weather unavailable';
+                }
+              }
+
+              function getWeatherIcon(description) {
+                return weatherIcons[description.toLowerCase()] || 'fas fa-wifi';
+              }
+              const weatherIcons = {
+                'clear sky': 'fas fa-sun',
+                'few clouds': 'fas fa-cloud-sun',
+                'broken clouds': 'fas fa-cloud-sun',
+                'scattered clouds': 'fas fa-cloud',
+                'overcast clouds': 'fas fa-cloud',
+                'rain': 'fas fa-cloud-showers-heavy',
+                'shower rain': 'fas fa-cloud-showers-heavy',
+                'sunny': 'fas fa-sun',
+                'rainy': 'fas fa-cloud-rain',
+                'moderate rain': 'fas fa-cloud-rain',
+                'heavy intensity rain': 'fas fa-cloud-showers-heavy',
+                'light rain': 'fas fa-cloud-rain',
+                'drizzle': 'fas fa-cloud-rain',
+                'thunderstorm': 'fas fa-bolt',
+                'mist': 'fas fa-smog',
+                'haze': 'fas fa-smog',
+                'fog': 'fas fa-smog',
+                'cold': 'fas fa-thermometer-empty',
+                'snow': 'fas fa-snowflake',
+                'windy': 'fas fa-wind',
+              };
+
+              document.addEventListener('DOMContentLoaded', function(){
+                getLocation();
+                try {
+                  var collapseEl = document.getElementById('multiCollapseExample2');
+                  if (collapseEl && typeof $ !== 'undefined' && $(collapseEl).collapse) {
+                    $(collapseEl).collapse('show');
+                  }
+                } catch(e) {}
+              });
+
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav m-sm-auto mt">
+        <li class="nav-item" style="margin-top: 25px; margin-right: 25px;">
           <a class="nav-link " href="index.html">Profile </a>
         </li>
-        <li class="nav-item" style="margin-top: 25px; margin-right: 25px;"> 
-          <a class="nav-link "  href="skills_Page.html">Skills</a>
+        <li class="nav-item" style="margin-top: 25px; margin-right: 25px;">
+          <a class="nav-link " href="skills_Page.html">Skills</a>
         </li>
 
         <li class="nav-item" style="margin-left: 70px; margin-right: 50px;">
           <div class="navbar-brand" id="clockLogo">
-        <a class="navbar-brand " style="color: white; font-size: xx-large; display: flex; align-items: center;" href="index.html">
-          <!-- Clock -->
-          <div class="d-inline col-12 clock-container" style="border: #0f4c5c; border-style: double; border-bottom: none; border-top: none; border-radius:15px;">
-            <div class="display-6" style="color: orange; font-size: larger;" id="clockB"></div>
-          <div class="lead" style="color: lime; font-size: small; text-align: left;" id="dateB"></div>
-        </div>
-      </a>
-    </div>
-      </li>
-
-      <li class="nav-item" style="margin-top: 25px; margin-right: 25px;"> 
-        <a class="nav-link active"  style="color: white;" href="experience.html">Experience</a>
+            <a class="navbar-brand" style="color: white; font-size: xx-large; display: flex; align-items: center;"
+              href="index.html">
+              <!-- Clock -->
+              <div class="d-inline col-12 clock-container"
+                style="border: #0f4c5c; border-style: double; border-bottom: none; border-top: none; border-radius:15px;">
+                <div class="display-6" style="color: orange; font-size: larger;" id="clockB"></div>
+                <div class="lead" style="color: lime; font-size: small; text-align: left;" id="dateB"></div>
+              </div>
+            </a>
+          </div>
         </li>
-        <li class="nav-item" style="margin-top: 25px; margin-right: 25px;"> 
+
+        <li class="nav-item" style="margin-top: 25px; margin-right: 25px;">
+          <a class="nav-link active" style="color: white;" href="experience.html">Experience</a>
+        </li>
+        <li class="nav-item" style="margin-top: 25px; margin-right: 25px;">
           <a class="nav-link " href="project_Page.html">Projects</a>
         </li>
       </ul>
