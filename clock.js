@@ -22,6 +22,29 @@ setInterval(updateClock, 1000);
 
 updateClock();
 
+  /* ── Counters ── */
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(counter => {
+      let count = 0;
+      const target = +counter.getAttribute('data-target');
+      const tick = () => {
+        if (count < target) {
+          count++;
+          counter.textContent = count + '%';
+          setTimeout(tick, 14);
+        }
+      };
+      tick();
+    });
+ 
+    /* ── Progress bars ── */
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.quality-bar').forEach(bar => {
+        const w = bar.getAttribute('data-width');
+        setTimeout(() => { bar.style.width = w + '%'; }, 300);
+      });
+    });
+
   /* Filter */
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', function () {

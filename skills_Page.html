@@ -22,16 +22,16 @@
 
 </head>
 <body>
-<nav class="navbar navbar-expand-md navbar-light sticky-top" style="background-color: #0f4c5c;">
+<nav class="navbar navbar-expand-md navbar-light sticky-top" style="background-color: white; box-shadow: 0 4px 18px rgba(15, 76, 92, 0.25); color: #0f4c5c;">
 
     <div class="navbar-brand" id="clockLog">
-      <a class="navbar-brand" style="color: white; font-size: xx-large; display: flex; align-items: center;"
+      <a class="navbar-brand" style=" font-size: xx-large; display: flex; align-items: center;"
         href="index.html">
         <!-- Clock -->
         <div class="d-inline col-12"
           style="border: white; border-style: double; border-bottom: none; border-top: none; border-radius:15px;">
           <div class="display-6" style="color: orange; font-size: larger;" id="clock"></div>
-          <div class="lead" style="color: lime; font-size: small; text-align: left;" id="date"></div>
+          <div class="lead" style="color: #0f4c5c; font-size: small; text-align: left;" id="date"></div>
         </div>
       </a>
     </div>
@@ -46,7 +46,7 @@
 
       <div class="col-sm-4 d-none d-md-block" style="padding: 0;">
         <div class="collapse multi-collapse" id="multiCollapseExample2">
-          <div class="card" style="background-color: #0f4c5c; border: none; box-shadow: none;">
+          <div class="card" style=" border: none; box-shadow: none;">
            
             <div id="weather" class="d-none d-md-block"></div>
 
@@ -76,11 +76,11 @@
                     const weatherDiv = document.getElementById("weather");
                     weatherDiv.innerHTML = `
                 <h2 class="display-5 text-center" style="font-weight: 200; color: orange">Temp : ${data.main.temp}°C</h2>
-                <h2 class="display-6 text-center" style="font-weight: 100; color: white; font-size: large">
+                <h2 class="display-6 text-center" style="font-weight: 100; color: #0f4c5c; font-size: large">
                     Conditions:
                     <i class=" ${getWeatherIcon(data.weather[0].description)} "></i> 
                 </h2>
-                <h2 class="display-6 text-center" style="font-weight: 200; color: lime; font-size: medium">
+                <h2 class="display-6 text-center" style="font-weight: 200; color: #0f4c5c; font-size: medium">
               Description : ${data.weather[0].description} </h2>
             `;
 
@@ -149,21 +149,21 @@
         <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav m-sm-auto mt">
         <li class="nav-item" style="margin-top: 25px; margin-right: 25px;">
-          <a class="nav-link " href="index.html">Profile </a>
+          <a class="nav-link "  href="index.html">Profile </a>
         </li>
         <li class="nav-item" style="margin-top: 25px; margin-right: 25px;">
-          <a class="nav-link active" style="color: white;" href="skills_Page.html">Skills</a>
+          <a class="nav-link active" href="skills_Page.html">Skills</a>
         </li>
 
         <li class="nav-item" style="margin-left: 70px; margin-right: 50px;">
           <div class="navbar-brand" id="clockLogo">
-            <a class="navbar-brand" style="color: white; font-size: xx-large; display: flex; align-items: center;"
+            <a class="navbar-brand" style=" font-size: xx-large; display: flex; align-items: center;"
               href="index.html">
               <!-- Clock -->
               <div class="d-inline col-12 clock-container"
                 style="border: #0f4c5c; border-style: double; border-bottom: none; border-top: none; border-radius:15px;">
                 <div class="display-6" style="color: orange; font-size: larger;" id="clockB"></div>
-                <div class="lead" style="color: lime; font-size: small; text-align: left;" id="dateB"></div>
+                <div class="lead" style="color: #0f4c5c; font-size: small; text-align: left;" id="dateB"></div>
               </div>
             </a>
           </div>
@@ -252,84 +252,257 @@
 </div>
 </div>
 
-<h1 class="display-2 text-center pb-3 m-5" style="color: #0f4c5c; font-weight: 300;" >Certificates and Training</h1>
+<h1 class="display-2 text-center pb-3 m-2" style="color: #0f4c5c; font-weight: 300;" >Certificates and Training</h1>
 
-<div class="row">
-  <div class="container">
-    <div class="mx-auto col-sm-8">
-      <table class="table">
-        <tbody class="skills">
-          <tr class="clickable-CT-row" onclick="toggleImage('javaSEImage')">
-            <td>
-              <h1 class="display-5 text-left" style="color: #0f4c5c; font-weight: 400;">Oracle University</h1>
-              <h4>OCA Java SE 8 Programmer</h4>
-              <div class="container justify-content-sm-center">
-              <img id="javaSEImage" src="img/JavaSE.jpg" alt="OCA Java SE 8 Programmer Image" style="display: none; width: 100%; height: auto;">
-            </div>
-           </td>
-          </tr>
-          <tr class="clickable-row" onclick="window.open('https://www.credly.com/badges/2847dbd2-4001-42c3-842d-275957ac0477/linked_in?t=riib6g', '_blank');">
-            <td>
-              <h2 class="display-5 text-left" style="color: #0f4c5c; font-weight: 400;">Microsoft</h2>
-              <h4>Microsoft Azure Fundamentals - AZ900</h4>
-            </td>
-          </tr>
-          <tr class="clickable-CT-row"  onclick="toggleImage('proPlanImage')">
-            <td>
-              <h2 class="display-5 text-left" style="color: #0f4c5c; font-weight: 400;">SpecCon Holdings</h2>
-              <h4>Project Planning</h4>
-              <div class="container justify-content-sm-center">
-              <img id="proPlanImage" src="img/pro-plan.jpg" alt="Project Planning Certificate" style="display: none; width: 100%; height: auto;">
-           </div>
-           </td>
-          </tr>
-          <tr class="clickable-CT-row"  onclick="toggleImage('wrSetaImage')">
-            <td>
-              <h2 class="display-5 text-left" style="color: #0f4c5c; font-weight: 400;">Wholesale and Retail SETA</h2>
-              <h4>Sales Assistance</h4>
-              <div class="container justify-content-sm-left">
-                <img id="wrSetaImage" src="img/wr-seta.jpg" alt="W&R SETA Certificate" style="display: none; width: 100%; height: auto;">
-              </div>
-           </td>
-          </tr>
-        </tbody>
-      </table>
-      <script>
-        function toggleImage(imageId) {
-          var image = document.getElementById(imageId);
-          image.style.display = (image.style.display === "none" || image.style.display === "") ? "block" : "none";
-        }
-      </script>
+<section class="certs-section">
+  <div class="certs-inner">
+
+    <div class="section-header">
+      <span class="section-tag"><i class="fas fa-certificate"></i> Credentials</span>
+    </div>
+    <div class="certs-grid pb-5">
+
+      <!-- Oracle -->
+      <div class="cert-card" onclick="toggleCert(this)">
+        <div class="cert-card-top">
+          <div class="cert-logo-wrap cert-oracle">
+            <i class="fas fa-database"></i>
+          </div>
+          <div class="cert-info">
+            <span class="cert-issuer">Oracle University</span>
+            <h3 class="cert-name">OCA Java SE 8 Programmer</h3>
+            <span class="cert-badge">Certification</span>
+          </div>
+          <div class="cert-toggle-icon"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="cert-preview">
+          <img src="img/JavaSE.jpg" alt="OCA Java SE 8 Programmer Certificate" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- Microsoft -->
+      <div class="cert-card cert-link" onclick="window.open('https://www.credly.com/badges/2847dbd2-4001-42c3-842d-275957ac0477/linked_in?t=riib6g', '_blank')">
+        <div class="cert-card-top">
+          <div class="cert-logo-wrap cert-microsoft">
+            <i class="fab fa-microsoft"></i>
+          </div>
+          <div class="cert-info">
+            <span class="cert-issuer">Microsoft</span>
+            <h3 class="cert-name">Azure Fundamentals — AZ-900</h3>
+            <span class="cert-badge cert-badge-link"><i class="fas fa-external-link-alt"></i> View on Credly</span>
+          </div>
+          <div class="cert-toggle-icon"><i class="fas fa-arrow-up-right-from-square"></i></div>
+        </div>
+      </div>
+
+      <!-- SpecCon -->
+      <div class="cert-card" onclick="toggleCert(this)">
+        <div class="cert-card-top">
+          <div class="cert-logo-wrap cert-speccon">
+            <i class="fas fa-project-diagram"></i>
+          </div>
+          <div class="cert-info">
+            <span class="cert-issuer">SpecCon Holdings</span>
+            <h3 class="cert-name">Project Planning</h3>
+            <span class="cert-badge">Training</span>
+          </div>
+          <div class="cert-toggle-icon"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="cert-preview">
+          <img src="img/pro-plan.jpg" alt="Project Planning Certificate" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- W&R SETA -->
+      <div class="cert-card" onclick="toggleCert(this)">
+        <div class="cert-card-top">
+          <div class="cert-logo-wrap cert-seta">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <div class="cert-info">
+            <span class="cert-issuer">Wholesale &amp; Retail SETA</span>
+            <h3 class="cert-name">Sales Assistance</h3>
+            <span class="cert-badge">Training</span>
+          </div>
+          <div class="cert-toggle-icon"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="cert-preview">
+          <img src="img/wr-seta.jpg" alt="W&amp;R SETA Certificate" loading="lazy" />
+        </div>
+      </div>
+
     </div>
   </div>
-</div>
+</section>
+
+<style>
+
+  .certs-inner {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .section-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #f97316;
+    background: rgba(249,115,22,0.08);
+    border: 1px solid rgba(249,115,22,0.2);
+    border-radius: 100px;
+    padding: 5px 14px;
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 800;
+    color: #0d1f26;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+  }
+  .section-sub {
+    font-size: 14px;
+  }
+
+  .certs-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .cert-card {
+    background: white;
+    border: 1.5px solid rgba(15,76,92,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: box-shadow 0.25s, border-color 0.25s, transform 0.25s;
+  }
+  .cert-card:hover {
+    border-color: rgba(15,76,92,0.28);
+    box-shadow: 0 8px 32px rgba(15,76,92,0.12);
+    transform: translateY(-2px);
+  }
+  .cert-card.open {
+    border-color: #0f4c5c;
+    box-shadow: 0 8px 32px rgba(15,76,92,0.14);
+  }
+  .cert-card.open .cert-toggle-icon i { transform: rotate(180deg); }
+
+  .cert-card-top {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 22px 24px;
+  }
+
+  .cert-logo-wrap {
+    flex-shrink: 0;
+    width: 52px; height: 52px;
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+  }
+  .cert-oracle   { background: rgba(204,0,0,0.08); color: #cc0000; }
+  .cert-microsoft{ background: rgba(0,120,212,0.09); color: #0078d4; }
+  .cert-speccon  { background: rgba(15,76,92,0.09); color: #0f4c5c; }
+  .cert-seta     { background: rgba(249,115,22,0.09); color: #f97316; }
+
+  .cert-info { flex: 1; min-width: 0; }
+  .cert-issuer {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: #8aa4ae;
+    margin-bottom: 4px;
+  }
+  .cert-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #0d1f26;
+    margin: 0 0 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .cert-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 600;
+    background: rgba(15,76,92,0.07);
+    color: #0f4c5c;
+    border-radius: 100px;
+    padding: 3px 10px;
+  }
+  .cert-badge-link { background: rgba(249,115,22,0.09); color: #f97316; }
+
+  .cert-toggle-icon {
+    flex-shrink: 0;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: rgba(15,76,92,0.06);
+    display: flex; align-items: center; justify-content: center;
+    color: #0f4c5c;
+    font-size: 12px;
+  }
+  .cert-toggle-icon i { transition: transform 0.35s cubic-bezier(0.22,1,0.36,1); }
+
+  .cert-preview {
+    display: none;
+    border-top: 1px solid rgba(15,76,92,0.08);
+    padding: 0;
+  }
+  .cert-preview img {
+    width: 100%;
+    display: block;
+    max-height: 420px;
+    object-fit: contain;
+    background: #f0f4f5;
+  }
+  .cert-card.open .cert-preview { display: block; }
+
+  .cert-link .cert-toggle-icon { background: rgba(249,115,22,0.08); color: #f97316; }
+
+  @media (max-width: 600px) {
+    .cert-card-top { padding: 16px 16px; gap: 14px; }
+    .cert-name { font-size: 14px; white-space: normal; }
+    .cert-logo-wrap { width: 44px; height: 44px; font-size: 17px; border-radius: 12px; }
+  }
+</style>
+
+<script>
+  function toggleCert(card) {
+    if (card.classList.contains('cert-link')) return;
+    const isOpen = card.classList.contains('open');
+    document.querySelectorAll('.cert-card.open').forEach(c => c.classList.remove('open'));
+    if (!isOpen) card.classList.add('open');
+  }
+</script>
 
 
 <!-- FOOTER -->
 <div class="card-fluid text-center" style="background-color: #0f4c5c;">
-  <div class="row">
-  <div class="card-body d-flex flex-column align-items-center">
-      
-          <a href="https://www.linkedin.com/in/lebohang-mofokeng-175b71183" target="_blank">
-              <i class="fab fa-linkedin" style=" color: blue;"></i> Lebohang Mofokeng
-          </a>
-     
-          <a href="https://github.com/LebohangLuuh" target="_blank">
-              <i class="fab fa-github" style=" color: black;"></i> LebohangLuuh
-          </a>
-      
-          <a href="mailto:lp.mofokeng96@gmail.com">
-              <i class="fas fa-envelope" style=" color: red;"></i> lp.mofokeng96@gmail.com
-          </a>
-    
-          <a href="tel:0710416807" class="phone-link">
-            <i class="fas fa-phone-alt icon-phone" style="color: green;"></i> 071 041 6807
-        </a>
+    <div class="card-body d-flex flex-column align-items-center">
+
+      <div class="card-footer text-muted">
+        Copyright © | 2024 | Lebohang Mofokeng
       </div>
-  </div>
-  <div class="card-footer text-muted">
-      Copyright © | 2024 | Lebohang Mofokeng
-  </div>
+    </div>
 </div>
 
 <script>

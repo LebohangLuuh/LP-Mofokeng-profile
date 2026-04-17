@@ -1,7 +1,11 @@
 
+.navbar {
+    background-color: white;
+  }
+
 .navbar .nav-item .active {
-    color: #fff; 
-    border: orange;
+    color: #0f4c5c; 
+    border: #0f4c5c;
     border-width: 3px;
     border-radius: 25px;
     border-style: solid;
@@ -10,7 +14,7 @@
   }
 
   .navbar .nav-item .nav-link {
-    color: #fff; 
+    color: #0f4c5c; 
  
   }
 

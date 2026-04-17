@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profile</title>
+  <title>Experience</title>
 
   <link rel="icon" href="profile.jpg" type="image/x-icon">
 
@@ -18,20 +18,427 @@
         width: 100%; 
     }
 </style>
+
+  <style>
+    :root {
+      --teal:        #0f4c5c;
+      --teal-mid:    #1a6a7e;
+      --teal-bright: #22d3a0;
+      --teal-glow:   rgba(34,211,160,0.12);
+      --orange:      #f97316;
+      --bg:          #f4f8f9;
+      --bg2:         #ffffff;
+      --border:      rgba(15,76,92,0.12);
+      --border-v:    rgba(15,76,92,0.2);
+      --text-muted:  #6b8a93;
+      --dark:        #0a1419;
+    }
+ 
+    * { box-sizing: border-box; }
+ 
+    body {
+      background: white;
+      color: var(--dark);
+      margin: 0;
+    }
+ 
+    /* ── HERO ── */
+    .exp-hero {
+      background: var(--teal);
+      padding: 80px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+ 
+    /* Decorative circles */
+    .exp-hero::before, .exp-hero::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .exp-hero::before {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(34,211,160,0.1) 0%, transparent 70%);
+      top: -150px; right: -100px;
+    }
+    .exp-hero::after {
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(249,115,22,0.08) 0%, transparent 70%);
+      bottom: -80px; left: -60px;
+    }
+ 
+    .exp-hero .label {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--teal-bright);
+      border: 1px solid rgba(34,211,160,0.35);
+      border-radius: 99px;
+      padding: 4px 16px;
+      margin-bottom: 20px;
+    }
+ 
+    .exp-hero h1 span { color: var(--teal-bright); }
+ 
+    /* ── SOFT QUALITIES STRIP ── */
+    .qualities-strip {
+      background: var(--bg2);
+      padding: 36px 24px;
+    }
+ 
+    .qualities-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+ 
+    .quality-item {
+      flex: 1;
+      min-width: 160px;
+      max-width: 200px;
+      text-align: center;
+      padding: 20px 12px;
+      border-radius: 14px;
+      background: var(white);
+      border: 1px solid var(--border);
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+ 
+    .quality-item:hover {
+      border-color: rgba(34,211,160,0.4);
+      box-shadow: 0 8px 24px rgba(15,76,92,0.08);
+    }
+ 
+    .quality-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.6rem;
+      color: var(--teal);
+      line-height: 1;
+    }
+ 
+    .quality-bar-wrap {
+      height: 4px;
+      background: var(--border);
+      border-radius: 99px;
+      margin: 8px 0 10px;
+      overflow: hidden;
+    }
+ 
+    .quality-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--teal), var(--teal-bright));
+      border-radius: 99px;
+      width: 0;
+      transition: width 1.4s cubic-bezier(.22,.61,.36,1);
+    }
+ 
+    .quality-label {
+      font-size: 11px;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+ 
+    /* ── TIMELINE SECTION ── */
+    .exp-section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 24px 80px;
+    }
+ 
+    .section-eyebrow {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+ 
+    .section-eyebrow .sub {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--teal-bright);
+    }
+ 
+    .section-eyebrow h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      color: var(--teal);
+      margin: 4px 0 0;
+      letter-spacing: 2px;
+    }
+ 
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 40px;
+    }
+ 
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 14px; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--teal), rgba(15,76,92,0.1));
+    }
+ 
+    .timeline-item {
+      position: relative;
+      margin-bottom: 28px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.5s cubic-bezier(.22,.61,.36,1) forwards;
+    }
+ 
+    .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+    .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+    .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+    .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+    .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+ 
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+ 
+    /* Dot on timeline */
+    .timeline-dot {
+      position: absolute;
+      left: -33px;
+      top: 22px;
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: var(--bg2);
+      border: 2px solid var(--teal);
+      transition: background 0.3s, border-color 0.3s;
+      z-index: 1;
+    }
+ 
+    .timeline-item:hover .timeline-dot {
+      background: var(--teal-bright);
+      border-color: var(--teal-bright);
+    }
+ 
+    /* Card */
+    .exp-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 28px;
+      cursor: pointer;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+    }
+ 
+    .exp-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--teal), var(--teal-bright));
+      border-radius: 99px 0 0 99px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+ 
+    .exp-card:hover {
+      border-color: rgba(15,76,92,0.3);
+      box-shadow: 0 12px 32px rgba(15,76,92,0.1);
+      transform: translateY(-3px);
+    }
+ 
+    .exp-card:hover::before { opacity: 1; }
+ 
+    .card-header-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 6px;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+ 
+    .company-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      color: var(--teal);
+      letter-spacing: 1.5px;
+      margin: 0;
+      line-height: 1;
+    }
+ 
+    .exp-badge {
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      background: rgba(15,76,92,0.08);
+      color: var(--teal);
+      border: 1px solid var(--border-v);
+      border-radius: 99px;
+      padding: 4px 12px;
+      white-space: nowrap;
+      align-self: center;
+    }
+ 
+    .exp-badge.current {
+      background: rgba(34,211,160,0.1);
+      color: #0d8c6a;
+      border-color: rgba(34,211,160,0.3);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+ 
+    .current-dot {
+      width: 6px; height: 6px;
+      background: var(--teal-bright);
+      border-radius: 50%;
+      animation: pulse 1.8s infinite;
+      display: inline-block;
+    }
+ 
+    @keyframes pulse {
+      0%,100% { opacity:1; transform:scale(1); }
+      50%      { opacity:0.5; transform:scale(0.7); }
+    }
+ 
+    .role-title {
+      font-size: 14px;
+      color: var(--orange);
+      font-weight: 500;
+      margin: 4px 0 2px;
+    }
+ 
+    .role-date {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 300;
+      margin-bottom: 14px;
+    }
+ 
+    .duties {
+      list-style: none;
+      padding: 0; margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+ 
+    .duties li {
+      font-size: 12px;
+      color: var(--text-muted);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 4px 10px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+ 
+    .exp-card:hover .duties li {
+      border-color: rgba(15,76,92,0.2);
+      color: var(--dark);
+    }
+ 
+    /* Click hint */
+    .click-hint {
+      position: absolute;
+      bottom: 16px; right: 18px;
+      font-size: 10px;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+ 
+    .exp-card:hover .click-hint { opacity: 1; }
+ 
+    /* ── MODALS ── */
+    .modal-content {
+      border-radius: 16px;
+      overflow: hidden;
+      border: none;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.18);
+    }
+ 
+    .modal-img-wrap {
+      width: 100%;
+      max-height: 60vh;
+      overflow: hidden;
+      position: relative;
+      background: var(--teal);
+    }
+ 
+    .modal-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+ 
+    .modal-img-wrap .wip-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: var(--teal);
+    }
+ 
+    .wip-overlay .wip-icon {
+      font-size: 4rem;
+      color: rgba(255,255,255,0.2);
+      margin-bottom: 12px;
+    }
+ 
+    .wip-overlay h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 3px;
+      margin: 0;
+    }
+ 
+    .wip-overlay p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+      margin-top: 8px;
+    }
+ 
+    .btn-close-modal:hover { background: var(--teal-mid); }
+ 
+    /* Responsive */
+    @media (max-width: 600px) {
+      .timeline { padding-left: 28px; }
+      .timeline-dot { left: -21px; }
+    }
+  </style>
+
 <link rel="stylesheet" href="navlink.css">
 
 </head>
 <body>
-<nav class="navbar navbar-expand-md navbar-light sticky-top" style="background-color: #0f4c5c;">
+<nav class="navbar navbar-expand-md navbar-light sticky-top" style="background-color: white; box-shadow: 0 4px 18px rgba(15, 76, 92, 0.25); color: #0f4c5c;">
 
     <div class="navbar-brand" id="clockLog">
-      <a class="navbar-brand" style="color: white; font-size: xx-large; display: flex; align-items: center;"
+      <a class="navbar-brand" style=" font-size: xx-large; display: flex; align-items: center;"
         href="index.html">
         <!-- Clock -->
         <div class="d-inline col-12"
           style="border: white; border-style: double; border-bottom: none; border-top: none; border-radius:15px;">
           <div class="display-6" style="color: orange; font-size: larger;" id="clock"></div>
-          <div class="lead" style="color: lime; font-size: small; text-align: left;" id="date"></div>
+          <div class="lead" style="color: #0f4c5c; font-size: small; text-align: left;" id="date"></div>
         </div>
       </a>
     </div>
@@ -46,7 +453,7 @@
 
       <div class="col-sm-4 d-none d-md-block" style="padding: 0;">
         <div class="collapse multi-collapse" id="multiCollapseExample2">
-          <div class="card" style="background-color: #0f4c5c; border: none; box-shadow: none;">
+          <div class="card" style=" border: none; box-shadow: none;">
            
             <div id="weather" class="d-none d-md-block"></div>
 
@@ -76,11 +483,11 @@
                     const weatherDiv = document.getElementById("weather");
                     weatherDiv.innerHTML = `
                 <h2 class="display-5 text-center" style="font-weight: 200; color: orange">Temp : ${data.main.temp}°C</h2>
-                <h2 class="display-6 text-center" style="font-weight: 100; color: white; font-size: large">
+                <h2 class="display-6 text-center" style="font-weight: 100; color: #0f4c5c; font-size: large">
                     Conditions:
                     <i class=" ${getWeatherIcon(data.weather[0].description)} "></i> 
                 </h2>
-                <h2 class="display-6 text-center" style="font-weight: 200; color: lime; font-size: medium">
+                <h2 class="display-6 text-center" style="font-weight: 200; color: #0f4c5c; font-size: medium">
               Description : ${data.weather[0].description} </h2>
             `;
 
@@ -149,7 +556,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav m-sm-auto mt">
         <li class="nav-item" style="margin-top: 25px; margin-right: 25px;">
-          <a class="nav-link " href="index.html">Profile </a>
+          <a class="nav-link "  href="index.html">Profile </a>
         </li>
         <li class="nav-item" style="margin-top: 25px; margin-right: 25px;">
           <a class="nav-link " href="skills_Page.html">Skills</a>
@@ -157,20 +564,20 @@
 
         <li class="nav-item" style="margin-left: 70px; margin-right: 50px;">
           <div class="navbar-brand" id="clockLogo">
-            <a class="navbar-brand" style="color: white; font-size: xx-large; display: flex; align-items: center;"
+            <a class="navbar-brand" style=" font-size: xx-large; display: flex; align-items: center;"
               href="index.html">
               <!-- Clock -->
               <div class="d-inline col-12 clock-container"
                 style="border: #0f4c5c; border-style: double; border-bottom: none; border-top: none; border-radius:15px;">
                 <div class="display-6" style="color: orange; font-size: larger;" id="clockB"></div>
-                <div class="lead" style="color: lime; font-size: small; text-align: left;" id="dateB"></div>
+                <div class="lead" style="color: #0f4c5c; font-size: small; text-align: left;" id="dateB"></div>
               </div>
             </a>
           </div>
         </li>
 
         <li class="nav-item" style="margin-top: 25px; margin-right: 25px;">
-          <a class="nav-link active" style="color: white;" href="experience.html">Experience</a>
+          <a class="nav-link active" href="experience.html">Experience</a>
         </li>
         <li class="nav-item" style="margin-top: 25px; margin-right: 25px;">
           <a class="nav-link " href="project_Page.html">Projects</a>
@@ -180,175 +587,157 @@
   </nav>
 
   <div class="page-content">
-  <!-- content -->
+ 
+  <h1 class="display-2 text-center pb-2 m-2" style="color: #0f4c5c; font-weight: 100;" >Experience</h1>
 
-  <h1 class="display-2 text-center" style="color: #0f4c5c; font-weight: 300;" >EXPERIENCE</h1>
-  <div class="container-fluid" style="background-color: #0f4c5c; width:fit-content">
-  <h1 class="display-5 text-center pt-2 pb-0" style="color: whitesmoke; font-weight: 300;" >The story of my professional growth and architect of expertise</h1>
-  
-  <section class="counters">
-    <div class="container w-100">
-      <div>
-        <div class="counter" style=" color: orange;" data-target="90">0</div>
-        <p class="display-4" style="font-size: large; color: lime;">Resilience and Adaptation</p>
+
+  <div class="qualities-strip">
+    <div class="qualities-inner">
+ 
+      <div class="quality-item">
+        <div class="quality-num counter" data-target="90">0</div>
+        <div class="quality-bar-wrap"><div class="quality-bar" data-width="90"></div></div>
+        <div class="quality-label">Resilience &amp; Adaptation</div>
       </div>
-      <div>
-        <div class="counter" style=" color: orange;" data-target="97">0</div>
-        <p class="display-4" style="font-size: large; color: lime;">Ethical Behavior</p>
+ 
+      <div class="quality-item">
+        <div class="quality-num counter" data-target="97">0</div>
+        <div class="quality-bar-wrap"><div class="quality-bar" data-width="97"></div></div>
+        <div class="quality-label">Ethical Behavior</div>
       </div>
-      <div>
-        <div class="counter" style=" color: orange;" data-target="95">0</div>
-        <p class="display-4" style="font-size: large; color: lime;">Professionalism</p>
+ 
+      <div class="quality-item">
+        <div class="quality-num counter" data-target="95">0</div>
+        <div class="quality-bar-wrap"><div class="quality-bar" data-width="95"></div></div>
+        <div class="quality-label">Professionalism</div>
       </div>
-      <div>
-        <div class="counter" style=" color: orange;" data-target="85">0</div>
-        <p class="display-4" style="font-size: large; color: lime;">Reliability and Accountability</p>
+ 
+      <div class="quality-item">
+        <div class="quality-num counter" data-target="85">0</div>
+        <div class="quality-bar-wrap"><div class="quality-bar" data-width="85"></div></div>
+        <div class="quality-label">Reliability &amp; Accountability</div>
       </div>
-      <div>
-        <div class="counter" style=" color: orange;" data-target="80">0</div>
-        <p class="display-4" style="font-size: large; color: lime;">Initiative and Proactiveness</p>
+ 
+      <div class="quality-item">
+        <div class="quality-num counter" data-target="80">0</div>
+        <div class="quality-bar-wrap"><div class="quality-bar" data-width="80"></div></div>
+        <div class="quality-label">Initiative &amp; Proactiveness</div>
       </div>
+ 
+    </div>
+  </div>
+ 
+  <section class="exp-section">
+ 
+    <div class="timeline">
+ 
+      <!-- Absa -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="exp-card" data-toggle="modal" data-target="#modalAbsa">
+          <div class="card-header-row">
+            <h2 class="company-name">Absa Group</h2>
+            <span class="exp-badge current"><span class="current-dot"></span>Current</span>
+          </div>
+          <div class="role-title">Full Stack Developer</div>
+          <div class="role-date"><i class="far fa-calendar-alt mr-1"></i>Oct 2025 – Present</div>
+          <ul class="duties">
+            <li>REST API Design</li>
+            <li>Angular + PrimeNG</li>
+            <li>Code Reviews</li>
+            <li>Debugging &amp; Troubleshooting</li>
+            <li>Deployments</li>
+            <li>Documentation</li>
+          </ul>
+        </div>
+      </div>
+ 
+      <!-- FNB -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="exp-card" data-toggle="modal" data-target="#firstRand">
+          <div class="card-header-row">
+            <h2 class="company-name">First National Bank</h2>
+            <span class="exp-badge">1 yr</span>
+          </div>
+          <div class="role-title">Junior Developer</div>
+          <div class="role-date"><i class="far fa-calendar-alt mr-1"></i>Mar 2024 – Feb 2025</div>
+          <ul class="duties">
+            <li>Java Spring Boot APIs</li>
+            <li>Angular Front-end</li>
+            <li>Agile / Sprint Planning</li>
+            <li>Legacy Modernization</li>
+            <li>Code Reviews</li>
+          </ul>
+        </div>
+      </div>
+ 
+      <!-- CapaCiTi -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="exp-card" data-toggle="modal" data-target="#capaciti">
+          <div class="card-header-row">
+            <h2 class="company-name">CapaCiTi</h2>
+            <span class="exp-badge">6 mo</span>
+          </div>
+          <div class="role-title">Full Stack Development Intern</div>
+          <div class="role-date"><i class="far fa-calendar-alt mr-1"></i>Sep 2023 – Feb 2024</div>
+          <ul class="duties">
+            <li>Game Development</li>
+            <li>Website Design &amp; Development</li>
+            <li>Job Critical Skills Program</li>
+          </ul>
+        </div>
+      </div>
+ 
+      <!-- Dynamic DNA -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="exp-card" data-toggle="modal" data-target="#dynamic">
+          <div class="card-header-row">
+            <h2 class="company-name">Dynamic DNA</h2>
+            <span class="exp-badge">1 yr</span>
+          </div>
+          <div class="role-title">System Development Intern</div>
+          <div class="role-date"><i class="far fa-calendar-alt mr-1"></i>May 2022 – Apr 2023</div>
+          <ul class="duties">
+            <li>Application Development</li>
+            <li>MVC &amp; System Design</li>
+            <li>Database Design &amp; Integration</li>
+          </ul>
+        </div>
+      </div>
+ 
+      <!-- Hosi -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="exp-card" data-toggle="modal" data-target="#hosi">
+          <div class="card-header-row">
+            <h2 class="company-name">Hosi Technologies</h2>
+            <span class="exp-badge">6 mo</span>
+          </div>
+          <div class="role-title">Java Development Intern</div>
+          <div class="role-date"><i class="far fa-calendar-alt mr-1"></i>Jul 2022 – Dec 2022</div>
+          <ul class="duties">
+            <li>Mobile App Development</li>
+            <li>Java Certification Training</li>
+            <li>Project Management</li>
+          </ul>
+          <span class="click-hint"><i class="fas fa-expand-alt"></i> View details</span>
+        </div>
+      </div>
+ 
     </div>
   </section>
-  </div>
-</div>
-<!--  -->
-
-<script>
-  const counters = document.querySelectorAll('.counter');
-  const speed = 15;
-
-  counters.forEach(counter => {
-    const updateCount = () => {
-      const target = +counter.getAttribute('data-target');
-      let count = 1;
-
-      const increaseCounter = () => {
-        if (count <= target) {
-          counter.innerText = count + '%';
-          count++;
-          setTimeout(increaseCounter, speed);
-        }
-      };
-
-      increaseCounter();
-    };
-
-    updateCount();
-  });
-</script>
-
-
-
-  <!-- Table -->
-<div class="row">
-  <div class="container">
-    <div class="mx-auto col-sm-12">
-      <table class="table table-hover">
-        <tbody>
-          <tr class="clickable-row" data-toggle="modal" data-target="#firstRand">
-            <td>
-              <h2 class="display-5 text-left" style="color: #0f4c5c; font-weight: 400;">First Rand</h2>
-              <h2 class="display-6 text-left" style="color: orange; font-weight: 300;">Full Stack Development Intern (March 2024 - March 2025)</h2>
-              <h4 class="display-6 text-muted" style=" font-weight: 300;">Front and back end Developer </h4>
-              <h4 class="display-6 text-muted" style=" font-weight: 300;">Application design and development</h4>
-            </td>
-          </tr>
-
-          <tr class="clickable-row" data-toggle="modal" data-target="#capaciti">
-            <td>
-              <h2 class="display-5 text-left" style="color: #0f4c5c; font-weight: 400;">CapaCiTi</h2>
-              <h2 class="display-6 text-left" style="color: orange; font-weight: 300;">Full Stack Development Intern (September 2023 - February 2024)</h2>
-              <h4 class="display-6 text-muted" style=" font-weight: 300;">Game Development</h4>
-              <h4 class="display-6 text-muted" style=" font-weight: 300;">Website design and development</h4>
-              <h4 class="display-6 text-muted" style=" font-weight: 300;">Job Critical Skills program</h4> 
-            </td>
-          </tr>
-          <tr class="clickable-row" data-toggle="modal" data-target="#dynamic"> 
-            <td>
-                <h2 class="display-5 text-left" style="color: #0f4c5c; font-weight: 400;">Dynamic DNA</h2>
-                <h2 class="display-6 text-left" style="color: orange; font-weight: 300;">System Development Intern (May 2022 - April 2023)</h2>
-                <h4 class="display-6 text-muted" style=" font-weight: 300;">Application development</h4>
-                <h4 class="display-6 text-muted" style=" font-weight: 300;">MVC and System development</h4>
-                <h4 class="display-6 text-muted" style=" font-weight: 300;">Create and connect Database</h4>
-            </td>
-        </tr>
-        <tr class="clickable-row" data-toggle="modal" data-target="#hosi">
-            <td>
-                <h2 class="display-5 text-left" style="color: #0f4c5c; font-weight: 400;">Hosi Technologies </h2>
-                <h2 class="display-6 text-left" style="color: orange; font-weight: 300;">Java Development Intern (July 2022 - December 2022)</h2>
-                <h4 class="display-6 text-muted" style=" font-weight: 300;">Mobile Application development</h4>
-                <h4 class="display-6 text-muted" style=" font-weight: 300;">Java certification training</h4>
-                <h4 class="display-6 text-muted" style=" font-weight: 300;">Project management</h4>
-            </td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade bd-example-modal-lg" id="capaciti" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-     <img src="img/progress.png">
-     <h2 class="display-3 text-center" style="color: #0f4c5c; font-weight: 400;">IN PROGRESS </h2>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn " style="border-radius: 25px;background-color: #0f4c5c; color: orange;" data-dismiss="modal">Close</button>
-      </div>
-  </div>
-</div>
-
-<div class="modal fade bd-example-modal-lg" id="dynamic" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-     <img src="img/dynamic.jpg" style="height: 95vh;">
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn " style="border-radius: 25px;background-color: #0f4c5c; color: orange;" data-dismiss="modal">Close</button>
-      </div>
-  </div>
-</div>
-
-<div class="modal fade bd-example-modal-lg" id="hosi" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-     <img src="img/hosi.jpg">
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn" style="border-radius: 25px; background-color: #0f4c5c; color: orange;" data-dismiss="modal">Close</button>
-      </div>
-  </div>
-</div>
-
-  <br><br>
-
+ 
 <!-- FOOTER -->
 
 <div class="card-fluid text-center" style="background-color: #0f4c5c;">
-    <div class="row">
-    <div class="card-body d-flex flex-column align-items-center">
-        
-            <a href="https://www.linkedin.com/in/lebohang-mofokeng-175b71183" target="_blank">
-                <i class="fab fa-linkedin" style=" color: blue;"></i> Lebohang Mofokeng
-            </a>
-       
-            <a href="https://github.com/LebohangLuuh" target="_blank">
-                <i class="fab fa-github" style=" color: black;"></i> LebohangLuuh
-            </a>
-        
-            <a href="mailto:lp.mofokeng96@gmail.com">
-                <i class="fas fa-envelope" style=" color: red;"></i> lp.mofokeng96@gmail.com
-            </a>
-      
-              <a href="tel:0710416807" class="phone-link">
-              <i class="fas fa-phone-alt icon-phone" style="color: green;"></i> 071 041 6807
-          </a>
-        </div>
-    </div>
-    <div class="card-footer text-muted">
+      <div class="card-body d-flex flex-column align-items-center">
+
+      <div class="card-footer text-muted">
         Copyright © | 2024 | Lebohang Mofokeng
+      </div>
     </div>
   </div>
   
@@ -358,6 +747,5 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <!-- </div> -->
 </body>
 </html>
