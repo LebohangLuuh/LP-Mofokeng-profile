@@ -3,7 +3,6 @@ function updateClock() {
     const now = new Date();
     const hours = now.getHours().toString().padStart(2, '0');
     const minutes = now.getMinutes().toString().padStart(2, '0');
-    const seconds = now.getSeconds().toString().padStart(2, '0');
     const date = now.toDateString();
 
     const clock = document.getElementById('clock');
@@ -22,6 +21,20 @@ function updateClock() {
 setInterval(updateClock, 1000);
 
 updateClock();
+
+  /* Filter */
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        const f = this.dataset.filter;
+        document.querySelectorAll('.proj-card').forEach(card => {
+          const tags = card.dataset.tags || '';
+          const show = f === 'all' || tags.includes(f);
+          card.style.display = show ? 'flex' : 'none';
+        });
+      });
+    });
 
 // mouse hover
 
@@ -49,12 +62,3 @@ document.querySelectorAll('.clickable-row').forEach(row => {
       alert('Please click for more information!');
     });
   });
-  
-
-
-
-
-  
-  
- 
-    

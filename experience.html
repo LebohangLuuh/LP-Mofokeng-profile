@@ -221,11 +221,11 @@
   counters.forEach(counter => {
     const updateCount = () => {
       const target = +counter.getAttribute('data-target');
-      let count = 1; // Start counting from 1
+      let count = 1;
 
       const increaseCounter = () => {
         if (count <= target) {
-          counter.innerText = count + '%'; // Display the count with a percentage sign
+          counter.innerText = count + '%';
           count++;
           setTimeout(increaseCounter, speed);
         }
@@ -249,7 +249,7 @@
           <tr class="clickable-row" data-toggle="modal" data-target="#firstRand">
             <td>
               <h2 class="display-5 text-left" style="color: #0f4c5c; font-weight: 400;">First Rand</h2>
-              <h2 class="display-6 text-left" style="color: orange; font-weight: 300;">Full Stack Development Intern (March 2024 - Currently)</h2>
+              <h2 class="display-6 text-left" style="color: orange; font-weight: 300;">Full Stack Development Intern (March 2024 - March 2025)</h2>
               <h4 class="display-6 text-muted" style=" font-weight: 300;">Front and back end Developer </h4>
               <h4 class="display-6 text-muted" style=" font-weight: 300;">Application design and development</h4>
             </td>
@@ -279,15 +279,6 @@
                 <h2 class="display-6 text-left" style="color: orange; font-weight: 300;">Java Development Intern (July 2022 - December 2022)</h2>
                 <h4 class="display-6 text-muted" style=" font-weight: 300;">Mobile Application development</h4>
                 <h4 class="display-6 text-muted" style=" font-weight: 300;">Java certification training</h4>
-                <h4 class="display-6 text-muted" style=" font-weight: 300;">Project management</h4>
-            </td>
-        </tr>
-        <tr class="clickable-row" data-toggle="modal" data-target="#moepi">
-            <td>
-                <h2 class="display-5 text-left" style="color: #0f4c5c; font-weight: 400;">Moepi Publishing</h2>
-                <h2 class="display-6 text-left" style="color: orange; font-weight: 300;">Junior Developer (April 2021 - April 2022)</h2>
-                <h4 class="display-6 text-muted" style=" font-weight: 300;">Mobile Application development (Android Studio - Java) - Team leader</h4>
-                <h4 class="display-6 text-muted" style=" font-weight: 300;">Website design and development</h4>
                 <h4 class="display-6 text-muted" style=" font-weight: 300;">Project management</h4>
             </td>
         </tr>
