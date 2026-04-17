@@ -115,7 +115,6 @@ body {
 }
 
 .glow-card {
-  background-color: #0f4c5c;
   border-color: orange;
   border-width: 2px;
   animation: blink 1s infinite alternate, storm 1s infinite linear;
@@ -165,7 +164,6 @@ body {
 .flip-span {
   color: lime; 
   font-size: 18px; 
-  background-color: #0f4c5c;
 }
 
 
